@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+<div class="wrapper">
+    <h2>Добро пожаловать!</h2>
+    
+    {% for user in users %}
+    <div class="card">
+        <h3 class="card-title">{{user.name}}</h3>
+        <div class="card-footer">
+            <a href="{{ path('app_get_user', {name: user.name}) }}">Перейти</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

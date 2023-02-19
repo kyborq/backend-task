@@ -1,0 +1,219 @@
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  background-color: #fafafa;
+}
+
+input,
+textarea,
+button {
+  font-family: "Montserrat", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: default;
+}
+
+:root {
+  --select-border: #777;
+  --select-focus: blue;
+  --select-arrow: var(--select-border);
+}
+
+.header {
+  background-color: #ffffff;
+  border-radius: 0 0 24px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+
+.header-container {
+  max-width: 640px;
+  width: 100%;
+  padding: 0 32px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.brand-logo {
+  color: #000000;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navigation {
+  display: flex;
+  gap: 24px;
+}
+
+.navigation-button {
+  color: #c7c7c7;
+  font-size: 16px;
+  transition: 150ms;
+}
+
+.navigation-button:hover {
+  color: #000000;
+  transition: 150ms;
+}
+
+.wrapper {
+  max-width: 640px;
+  width: 100%;
+  margin: auto;
+}
+
+.card {
+  padding: 24px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.card-text {
+  font-size: 16px;
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+.card-contact {
+  font-size: 14px;
+  color: #c7c7c7;
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+.select {
+  width: 100%;
+  border: 1px solid var(--select-border);
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #fff;
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+  display: grid;
+  grid-template-areas: "select";
+  align-items: center;
+  position: relative;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid var(--select-border);
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  font-size: 1.25rem;
+  line-height: 1.1;
+  background-color: #fff;
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+  display: grid;
+  grid-template-areas: "select";
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#form div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#form label {
+  font-size: 13px;
+  color: #c7c7c7;
+}
+
+.select::after {
+  content: "";
+  width: 0.8em;
+  height: 0.5em;
+  background-color: var(--select-arrow);
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+  justify-self: end;
+}
+
+select,
+.select:after {
+  grid-area: select;
+}
+
+select:focus + .focus {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  border: 2px solid var(--select-focus);
+  border-radius: inherit;
+}
+
+#form_save {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 425px) {
+  .header {
+    height: 100px;
+  }
+
+  .header-container {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .wrapper {
+    width: auto;
+    margin: 0 32px;
+  }
+}
+
+.pagination {
+  display: flex;
+  gap: 8px;
+}
+
+.page-button {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+  border-radius: 12px;
+}
+
+.page-button.selected {
+  background-color: #ffffff;
+}

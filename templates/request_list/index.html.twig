@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RequestListController!{% endblock %}
+
+{% block body %}
+<div class="wrapper">
+    <h2>Список заявок</h2> 
+    <p>Всего: {{controller_name}}</p>
+
+    {% for request in requests %}
+        <div class="card">
+            <h3 class="card-title">Заявка для {{request.user.name}}</h3>
+            <p class="card-text">{{request.message}}</p>
+            <p class="card-contact">{{request.contact}}</p>
+            <div class="card-footer">
+                <a href="{{ path('app_get_user', {name: request.user.name}) }}">Перейти</a>
+            </div>
+        </div>
+    {% endfor %}
+
+    <div class="pagination">
+        {% for i in 1..pages %}
+            <a class="page-button {{ (current_page == i) ? 'selected' : '' }}" href="{{ path('app_request_list', {page: i}) }}">{{i}}</a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

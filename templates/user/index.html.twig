@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Пользователь{% endblock %}
+
+{% block body %}
+<div class="wrapper">
+    {% if user_name is defined %}
+    <h2>{{ user_name }}</h2>
+
+    {{ form(form) }}
+
+    {% else %}
+        <h2>Пользователя не существует</h2>
+        <a href="{{ path('app_create_user', {name: name}) }}">Создать {{name}}</a>
+    {% endif %}
+</div>
+{% endblock %}
